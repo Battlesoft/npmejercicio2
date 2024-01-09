@@ -7,6 +7,10 @@ app.get("/", function(req, res) {
     res.send('Hello Express');
 })
 
+app.get("/", function(req, res) {
+    absolutePath = __dirname + '/views/index.html'
+})
+
 
 
 
