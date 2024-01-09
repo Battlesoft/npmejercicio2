@@ -4,7 +4,7 @@ let app = express();
 console.log("Hello World");
 
 
-const absolutePath = __dirname + '/views/findex.html';
+const absolutePath = __dirname + '/views/index.html';
 
 
 app.get("/", function(req, res) {
