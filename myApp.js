@@ -8,10 +8,6 @@ const absolutePath = __dirname + '/views/index.html';
 
 
 app.get("/", function(req, res) {
-    res.send('Hello Express');
-})
-
-app.get("/", function(req, res) {
     res.sendFile(absolutePath);
 })
 
