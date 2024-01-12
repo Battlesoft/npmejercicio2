@@ -3,6 +3,17 @@ let app = express();
 
 console.log("Hello World");
 
+app.get("/now",
+  (req, res, next) => {
+    req.time(Date().toString());
+    req.string = "example";
+    next();
+  },
+  (req, res) => {
+    res.send(req.string);
+  }
+);
+
 app.use(function middleware(req, res, next) {
   var string = req.method + " " + req.path + " - " + req.ip;
   console.log(string);
