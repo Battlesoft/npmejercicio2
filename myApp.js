@@ -3,14 +3,13 @@ let app = express();
 
 console.log("Hello World");
 
-app.get("/now",
-  (req, res, next) => {
+app.get("/now",(req, res, next) => {
     req.time(Date().toString());
     req.string = "example";
     next();
   },
   (req, res) => {
-    res.send(req.string);
+    res.json({time: req.time});
   }
 );
 
