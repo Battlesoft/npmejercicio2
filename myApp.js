@@ -3,6 +3,14 @@ let app = express();
 
 console.log("Hello World");
 
+app.use(function middleware(req, res, next) {
+  var string = req.method + " " + req.path + " - " + req.ip;
+  console.log(string);
+  next();
+});
+
+
+
 app.use("/public", express.static(__dirname + "/public"));
 
 const absolutePath = __dirname + '/views/index.html';
@@ -25,11 +33,7 @@ app.get("/json", function(req,res) {
 
 })
 
-app.use(function middleware(req, res, next) {
-  var string = req.method + " " + req.path + " - " + req.ip;
-  console.log(string);
-  next();
-});
+
 
 
 
