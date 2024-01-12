@@ -4,8 +4,7 @@ let app = express();
 console.log("Hello World");
 
 app.get("/now",(req, res, next) => {
-    req.time(Date().toString());
-    req.string = "example";
+    req.time = new Date().toString();
     next();
   },
   (req, res) => {
