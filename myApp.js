@@ -25,6 +25,12 @@ app.get("/json", function(req,res) {
 
 })
 
+app.use(function middleware(req, res, next) {
+  var string = req.method + " " + req.path + " - " + req.ip;
+  console.log(string);
+  next();
+});
+
 
 
 
