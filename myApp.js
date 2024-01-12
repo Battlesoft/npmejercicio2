@@ -3,6 +3,11 @@ let app = express();
 
 console.log("Hello World");
 
+app.get("/:world/echo", (req,res) => {
+  const { word } = req.params;
+  res.json({echo: word});
+})
+
 app.get("/now",(req, res, next) => {
     req.time = new Date().toString();
     next();
