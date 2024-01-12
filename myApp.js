@@ -4,8 +4,8 @@ let app = express();
 console.log("Hello World");
 
 app.get("/:world/echo", (req,res) => {
-  const { word } = req.params;
-  res.json({echo: word});
+  const { world } = req.params;
+  res.json({echo: world});
 })
 
 app.get("/now",(req, res, next) => {
