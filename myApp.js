@@ -3,6 +3,14 @@ let app = express();
 
 console.log("Hello World");
 
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
+
+
 app.get("/name", (req,res) => {
   var firstName = req.query.first;
   var lastName = req.query.last;
