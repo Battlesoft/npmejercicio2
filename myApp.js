@@ -9,17 +9,17 @@ const absolutePath = __dirname + '/views/index.html';
 var response = "Hello World".toUpperCase();
 
 
-app.get("/", function(req, res) {
-    res.sendFile(absolutePath);
+app.get("/", function (req, res) {
+  res.sendFile(absolutePath);
 })
 
-app.get("/json", function(req,res) {
+app.get("/json", function (req, res) {
 
-    if (process.env.MESSAGE_STYLE="uppercase") {
-        response = "Hello World".toUpperCase();
-      } else {
-        response = "Hello World";
-      }
+  if (process.env.VAR_NAME === "allCaps") {
+    response = "Hello World".toUpperCase();
+  } else {
+    response = "Hello World";
+  }
 })
 
 
@@ -53,4 +53,4 @@ app.get("/json", function(req,res) {
 
 
 
- module.exports = app;
+module.exports = app;
